@@ -71,7 +71,7 @@ let jk: any[];// jk is an array of anytype values
 function combine(input1: number | string, input2: number| string){
     let result;
    // result=input1+input2; // ERROR operator + cannot be applied to union types 
-    if(typeof input1==='number' && input2 ==='numer'){
+    if(typeof input1==='number' && input2 ==='number'){
         result=input1+ input2;
         //this avoids the error 
     }else{
@@ -82,3 +82,25 @@ return result;
 const combinedNmaes=combine('Ann','Maria');
 const combinedAges= combine(1,10);
  
+//literal Type
+//example if we needed the above function to have a specific type result
+function combineLit(
+    input1: number|string,
+    input2: number| string,
+    resultConversion:'as-number'|'as-text' //implies resultConversion is of literal type and 
+    //can only take these two values
+){
+    let result;
+    if(typeof input1==='number' && input2 ==='number' && resultConversion=== 'as-number'){
+        result=input1+ input2;
+        //this avoids the error 
+       // || resultConversion still shows error but && doesn't
+    }else{
+        result=input1.toString()+ input2.toString();
+    }
+return result;
+}
+const combinedAgesLit= combineLit(1,10,'as-number');
+//o/p will be 11
+const combinedNmaesLit= combineLit('ann', 'maria','as-text');
+// o/p will be annmaria
