@@ -61,3 +61,8 @@ const superhero={
 if(superhero.role===Role.ADMIN){
     console.log(superhero.name+"ia an admin")
 }
+//any Types
+let jam:any;//jam is a varibale of type any
+let jk: any[];// jk is an array of anytype values
+//It takes away every advantages that TS gives you and the variable will be used as it wouild be in vanila JS
+//SO it can be used as a fall back if you absolutely need a varibale which we dont the the type of
