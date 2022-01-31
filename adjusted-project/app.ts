@@ -66,3 +66,19 @@ let jam:any;//jam is a varibale of type any
 let jk: any[];// jk is an array of anytype values
 //It takes away every advantages that TS gives you and the variable will be used as it wouild be in vanila JS
 //SO it can be used as a fall back if you absolutely need a varibale which we dont the the type of
+
+//Union Types, a funtn that accepts two diff type of values.
+function combine(input1: number | string, input2: number| string){
+    let result;
+   // result=input1+input2; // ERROR operator + cannot be applied to union types 
+    if(typeof input1==='number' && input2 ==='numer'){
+        result=input1+ input2;
+        //this avoids the error 
+    }else{
+        result=input1.toString()+ input2.toString();
+    }
+return result;
+}
+const combinedNmaes=combine('Ann','Maria');
+const combinedAges= combine(1,10);
+ 
