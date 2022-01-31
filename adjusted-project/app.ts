@@ -104,3 +104,28 @@ const combinedAgesLit= combineLit(1,10,'as-number');
 //o/p will be 11
 const combinedNmaesLit= combineLit('ann', 'maria','as-text');
 // o/p will be annmaria
+
+//TYPE ALIASES
+type combinedType= number| string;
+const result: combinedType =21;
+const rr: combinedType='tom';
+//we stored the union type in combinedType basiclaly
+//But can also 'create' our own types
+type User = { name: string; age: number };
+const u1: User = { name: 'Max', age: 30 };
+//For example, you can simplify this code:
+// function greet(user: { name: string; age: number }) {
+//     console.log('Hi, I am ' + user.name);
+//   }
+   
+//   function isOlder(user: { name: string; age: number }, checkAge: number) {
+//     return checkAge > user.age;
+//   }
+  //to
+function greet(user: User) {
+  console.log('Hi, I am ' + user.name);
+}
+ 
+function isOlder(user: User, checkAge: number) {
+  return checkAge > user.age;
+}
