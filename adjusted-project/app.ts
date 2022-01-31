@@ -47,3 +47,17 @@ for(const  hobby of person2.hobbies){
 //console.log(hobby.map()); //ERROR as hobby will have string and .map operates on arrays.
 }
 let names: string[];//implies names 
+//Enum- Automatically enumerated global constant identifier. introduced by TS not part of JS
+enum Role{
+    ADMIN, CLIENT, AUTHOR
+}
+// Elemts will have numbs assigned to them automatically in order eg- ADMIN =0 and so on
+const superhero={
+    name: 'Tony',
+    age:50,
+    role: Role.ADMIN //means value of role is 0
+}
+//can be checked as as
+if(superhero.role===Role.ADMIN){
+    console.log(superhero.name+"ia an admin")
+}
