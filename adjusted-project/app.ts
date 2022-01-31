@@ -13,3 +13,13 @@
      //Here userinput is guarenteed to be a string here
  }
  //Unknown is better than any because a slight amount of type control is still provided
+
+ function generateERROR(message: string, code:number){
+     throw{
+         message:message, errorCode: code
+     };
+ }
+ generateERROR('An error occured', 900);
+ //this actually doesn't show anything not even undefined 
+ //thats coz the fn returns a never value by default althoughthe hover shows void
+ //It's actually never as this  function breaks the script another example would be a function with an infinite loop.
