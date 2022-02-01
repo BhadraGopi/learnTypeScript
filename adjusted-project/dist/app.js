@@ -6,10 +6,14 @@ class DepartmentModified {
         this.name = name;
         this.employees = [];
     }
+    static createEmployee(name) {
+        return { name: name };
+    }
     addEmployee(employee) {
         this.employees.push(employee);
     }
 }
+DepartmentModified.fiscalyear = 2020;
 class AcountingDepartment extends DepartmentModified {
     constructor(id, reports) {
         super(id, 'Accounding');
@@ -39,5 +43,7 @@ class AcountingDepartment extends DepartmentModified {
 const accounding = new AcountingDepartment('d2', []);
 accounding.mostRecentReport = "REPORT NEW";
 console.log(accounding.mostRecentReport);
-//accesed like a  property but will execute the edfined method.
+//accesed like a  property but will execute the defined method.
+const employee1 = DepartmentModified.createEmployee('Mat');
+console.log(employee1, DepartmentModified.fiscalyear);
 //# sourceMappingURL=app.js.map

@@ -1,12 +1,17 @@
 //GETTER AND SETTER
 class DepartmentModified{
     protected employees: string[]=[];
+    static fiscalyear=2020;
     constructor(private readonly id:string, public name: string){
 
+    }
+    static createEmployee(name:string){
+   return{name:name};
     }
     addEmployee(employee: string){
         this.employees.push(employee);
     }
+
 }
 class AcountingDepartment extends DepartmentModified{
     private lastReport: string;
@@ -39,4 +44,6 @@ const accounding=new AcountingDepartment('d2',[]);
 accounding.mostRecentReport="REPORT NEW";
 console.log(accounding.mostRecentReport);
 
-//accesed like a  property but will execute the edfined method.
+//accesed like a  property but will execute the defined method.
+const employee1=DepartmentModified.createEmployee('Mat');
+console.log(employee1,DepartmentModified.fiscalyear);
