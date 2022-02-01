@@ -69,6 +69,7 @@ interface Horse{
 type Animal=Bird|Horse;
 function moveAnimal(animal:Animal){
     let speed;
+    //descriminated unions
     switch(animal.type){
         case'bird':
         speed=animal.flyingSpeed;
@@ -77,4 +78,12 @@ function moveAnimal(animal:Animal){
         speed=animal.runningSpeed;
     }
     console.log('Moving at speed'+ speed);
+}
+interface ErrorContainer{
+    //defining index type, can't use boolean here
+    [prop: string]:string;
+}
+const errorBag: ErrorContainer={
+    email: 'Not valid email!',
+    username: 'Must start with a capital character'
 }

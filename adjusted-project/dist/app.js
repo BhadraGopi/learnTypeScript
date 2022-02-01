@@ -47,6 +47,7 @@ useVehicle(v1);
 useVehicle(v2);
 function moveAnimal(animal) {
     let speed;
+    //descriminated unions
     switch (animal.type) {
         case 'bird':
             speed = animal.flyingSpeed;
@@ -56,4 +57,8 @@ function moveAnimal(animal) {
     }
     console.log('Moving at speed' + speed);
 }
+const errorBag = {
+    email: 'Not valid email!',
+    username: 'Must start with a capital character'
+};
 //# sourceMappingURL=app.js.map
