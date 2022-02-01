@@ -92,3 +92,11 @@ const errorBag: ErrorContainer={
 }
 const value = add('Max','Soju');
 value.split('');//is poossible bcoz TS identifies the value will be a string
+
+const UserData={
+    id:'u7',
+    name:'Tom',
+    job:{ title: 'CEO', description:'Own Company'}
+};
+console.log(UserData?.job?.title);
+//Optional Chanining to avoid run time error when a property of a nested object is missing

@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 const e1 = {
     name: 'Kim',
     priviledges: ['create-server'],
@@ -63,4 +64,11 @@ const errorBag = {
 };
 const value = add('Max', 'Soju');
 value.split(''); //is poossible bcoz TS identifies the value will be a string
+const UserData = {
+    id: 'u7',
+    name: 'Tom',
+    job: { title: 'CEO', description: 'Own Company' }
+};
+console.log((_a = UserData === null || UserData === void 0 ? void 0 : UserData.job) === null || _a === void 0 ? void 0 : _a.title);
+//Optional Chanining to avoid run time error when a property of a nested object is missing
 //# sourceMappingURL=app.js.map
