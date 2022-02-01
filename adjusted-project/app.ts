@@ -53,5 +53,17 @@ const adds=(a:number, b:number=1) =>a+b;
      name:'Max',
      age:32
  }
- const copiedMan={...Man}; //it is NOT a pointer that points to 'Man' in memory but a perfect copy of the key value pair.
- 
+ const copiedMan={...Man}; 
+ //it is NOT a pointer that points to 'Man' in memory but a perfect copy of the key value pair.
+//REST PARAMETERS
+//Rest parameters comes in when you wanna accept 'n' number of inputs values somewhere
+const added=(...numbers: number[])=>{
+    return numbers.reduce((currResult,currValues)=>{
+        return currResult+currValues;
+    },0);
+};
+//can input any number of parametes
+const addedNumbers= added(2,5,4,7,9);
+console.log(addedNumbers);
+//All the input values will be merged into an array
+//A tuple can also be used to set the number and type of input values
