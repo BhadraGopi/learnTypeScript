@@ -36,7 +36,7 @@ class ITDepartment extends Department{
             return;
         }
         this.employees.push(name);
-        //the function from Base class is overriden
+        //the function from Base
     }
 }
 const IT=new ITDepartment('d1',['Tom']);
