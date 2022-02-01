@@ -1,41 +1,19 @@
-//type AddFn=(a:number, b:number)=>number;
-interface AddFn{
-    (a:number,b:number):number;
-    //interface as a function type
-}
-let addF: AddFn;
-addF=(n1:number, n2:number)=>{
-return n1+n2;
+//Intersection Types
+type Admin={
+    name: string;
+    priviledgess:string[];
 };
-interface Named{
-    readonly name?: string;
+type Employee={
+    name: string;
+    startDate: Date;
 }
-interface Greetable extends Named{
-    //multiple interfaces can be extended by adding along after coma
-      greet(phrases: string):void;
+
+type ElevatedEmployee=Admin&Employee;
+const e1: ElevatedEmployee={
+    name:'Kim',
+    priviledgess:['create-server'],
+    startDate: new Date()
 }
-class Person implements Greetable{
-    //can implement multiple interfaces unlike inheritance
-    name?: string;
-    age=52;
-    constructor(n?:string){
-        if(n){
-            this.name=n;
-        }
-        
-    }
-    greet(phrases: string): void {
-        console.log(phrases+' '+this.name);
-    }
-}
- let user1: Greetable;
-// user1={
-//     name:'Mat',
-//    // age:20,
-//     greet(phrase:string){
-//         console.log(phrase+' '+this.name);
-//     }
-// };
- user1=new Person('Mat');
-user1.greet('HI there-I am');
-console.log(user1);
+type Combinable = string|number;
+type Numeric=number|boolean;
+type Universal= Combinable& Numeric;
