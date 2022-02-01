@@ -1,10 +1,18 @@
+//type AddFn=(a:number, b:number)=>number;
+interface AddFn{
+    (a:number,b:number):number;
+    //interface as a function type
+}
+let addF: AddFn;
+addF=(n1:number, n2:number)=>{
+return n1+n2;
+};
 interface Named{
     readonly name: string;
 }
 interface Greetable extends Named{
-    
-  
-    greet(phrases: string):void;
+    //multiple interfaces can be extended by adding along after coma
+      greet(phrases: string):void;
 }
 class Person implements Greetable{
     //can implement multiple interfaces unlike inheritance
