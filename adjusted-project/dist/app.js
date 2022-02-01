@@ -71,4 +71,8 @@ const UserData = {
 };
 console.log((_a = UserData === null || UserData === void 0 ? void 0 : UserData.job) === null || _a === void 0 ? void 0 : _a.title);
 //Optional Chanining to avoid run time error when a property of a nested object is missing
+const userInput = '';
+//const storedData= userinput | 'DEAFULT'; // would go to default even for empty string
+const storedData = userinput !== null && userinput !== void 0 ? userinput : 'DEFAULT'; //explicitly chceks id its null or undefined
+console.log(storedData);
 //# sourceMappingURL=app.js.map

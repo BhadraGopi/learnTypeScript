@@ -100,3 +100,7 @@ const UserData={
 };
 console.log(UserData?.job?.title);
 //Optional Chanining to avoid run time error when a property of a nested object is missing
+const userInput='';
+//const storedData= userinput | 'DEAFULT'; // would go to default even for empty string
+const storedData= userinput ?? 'DEFAULT';//explicitly chceks id its null or undefined
+console.log(storedData);
