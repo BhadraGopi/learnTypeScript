@@ -61,4 +61,6 @@ const errorBag = {
     email: 'Not valid email!',
     username: 'Must start with a capital character'
 };
+const value = add('Max', 'Soju');
+value.split(''); //is poossible bcoz TS identifies the value will be a string
 //# sourceMappingURL=app.js.map

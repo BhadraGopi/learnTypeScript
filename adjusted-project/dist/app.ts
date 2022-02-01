@@ -17,6 +17,9 @@ const e1: ElevatedEmployee={
 type Combinable = string|number;
 type Numeric=number|boolean;
 type Universal= Combinable& Numeric;
+//function overload
+function add(a:number,b:number):number
+function add(a:string,b:string):string
 function add(a:Combinable,b:Combinable){
     if(typeof a==='string' || typeof b==='string'){
         //this is a type guard using typeof
@@ -87,3 +90,5 @@ const errorBag: ErrorContainer={
     email: 'Not valid email!',
     username: 'Must start with a capital character'
 }
+const value = add('Max','Soju');
+value.split('');//is poossible bcoz TS identifies the value will be a string
