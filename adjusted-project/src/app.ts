@@ -1,6 +1,7 @@
 class Department{
     name: string; //field of the class NOT an object
-  
+  private employees: string[]=[];// means only accesible inside the particular class
+  //in no modifier specified it's public by default
     constructor(n:string){
 this.name=n;
     }
