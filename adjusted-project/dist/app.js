@@ -40,7 +40,20 @@ function useVehicle(vehicle) {
     vehicle.drive();
     if (vehicle instanceof Truck) {
         vehicle.loadCargo(900);
-        //JS idendentifies instanceof
+        //JS idendentifies instanceof as Truck here is a class but won't work for Interfaces
     }
+}
+useVehicle(v1);
+useVehicle(v2);
+function moveAnimal(animal) {
+    let speed;
+    switch (animal.type) {
+        case 'bird':
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeed;
+    }
+    console.log('Moving at speed' + speed);
 }
 //# sourceMappingURL=app.js.map
