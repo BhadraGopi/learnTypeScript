@@ -33,3 +33,8 @@
 const printOUT:(a:number|string)=>void = output=>console.log(output); 
 //If there are no parameters an empty pair of parantheses is used 
 ()=>{}//Like so
+
+//Default parameters/arguments in functions
+//one argument can be a constant in cerrtain functions which can be set as
+const adds=(a:number, b:number=1) =>a+b;
+//the default arg should always be given to the far right, otherwise TS will assume it to be not default and assume the first input value is the value of said arg
