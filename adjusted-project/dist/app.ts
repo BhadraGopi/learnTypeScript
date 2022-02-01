@@ -15,6 +15,7 @@ abstract describe(this: DepartmentModified):void;
 }
 class AcountingDepartment extends DepartmentModified{
     private lastReport: string;
+    private static instance: AcountingDepartment;
     //getter is to retrive a value and allows to apply more complex logic
     get mostRecentReport(){
         if(this.lastReport){
@@ -31,9 +32,16 @@ class AcountingDepartment extends DepartmentModified{
     }
 this.addReport(value);
     }
-    constructor(id:string, private reports:string[]){
+  private  constructor(id:string, private reports:string[]){
         super(id,'Accounding');
         this.lastReport= reports[0];
+    }
+    static getInstance(){
+        if(this.instance){
+            return this.instance;
+        }
+        this.instance=new AcountingDepartment('d2',[]);
+        return this.instance;
     }
     addReport(text:string){
         this.reports.push(text);
@@ -43,7 +51,8 @@ this.addReport(value);
         console.log('Accounting Department-ID');
     }
 }
-const accounding=new AcountingDepartment('d2',[]);
+//const accounding=new AcountingDepartment('d2',[]);
+const accounding=AcountingDepartment.getInstance();
 accounding.mostRecentReport="REPORT NEW";
 console.log(accounding.mostRecentReport);
 

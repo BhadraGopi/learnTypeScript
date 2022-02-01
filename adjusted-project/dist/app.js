@@ -35,6 +35,13 @@ class AcountingDepartment extends DepartmentModified {
         }
         this.addReport(value);
     }
+    static getInstance() {
+        if (this.instance) {
+            return this.instance;
+        }
+        this.instance = new AcountingDepartment('d2', []);
+        return this.instance;
+    }
     addReport(text) {
         this.reports.push(text);
         this.lastReport = text;
@@ -43,7 +50,8 @@ class AcountingDepartment extends DepartmentModified {
         console.log('Accounting Department-ID');
     }
 }
-const accounding = new AcountingDepartment('d2', []);
+//const accounding=new AcountingDepartment('d2',[]);
+const accounding = AcountingDepartment.getInstance();
 accounding.mostRecentReport = "REPORT NEW";
 console.log(accounding.mostRecentReport);
 //accesed like a  property but will execute the defined method.
