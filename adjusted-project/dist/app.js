@@ -39,6 +39,9 @@ class AcountingDepartment extends DepartmentModified {
         this.reports.push(text);
         this.lastReport = text;
     }
+    describe() {
+        console.log('Accounting Department-ID');
+    }
 }
 const accounding = new AcountingDepartment('d2', []);
 accounding.mostRecentReport = "REPORT NEW";

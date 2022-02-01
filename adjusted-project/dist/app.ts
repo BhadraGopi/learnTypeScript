@@ -1,8 +1,8 @@
 //GETTER AND SETTER
-class DepartmentModified{
+abstract class DepartmentModified{
     protected employees: string[]=[];
     static fiscalyear=2020;
-    constructor(private readonly id:string, public name: string){
+    constructor(protected readonly id:string, public name: string){
 
     }
     static createEmployee(name:string){
@@ -11,7 +11,7 @@ class DepartmentModified{
     addEmployee(employee: string){
         this.employees.push(employee);
     }
-
+abstract describe(this: DepartmentModified):void;
 }
 class AcountingDepartment extends DepartmentModified{
     private lastReport: string;
@@ -38,6 +38,9 @@ this.addReport(value);
     addReport(text:string){
         this.reports.push(text);
         this.lastReport=text;
+    }
+    describe(this: DepartmentModified): void {
+        console.log('Accounting Department-ID');
     }
 }
 const accounding=new AcountingDepartment('d2',[]);
