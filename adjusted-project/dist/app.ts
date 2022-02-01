@@ -8,7 +8,7 @@ addF=(n1:number, n2:number)=>{
 return n1+n2;
 };
 interface Named{
-    readonly name: string;
+    readonly name?: string;
 }
 interface Greetable extends Named{
     //multiple interfaces can be extended by adding along after coma
@@ -16,10 +16,13 @@ interface Greetable extends Named{
 }
 class Person implements Greetable{
     //can implement multiple interfaces unlike inheritance
-    name: string;
+    name?: string;
     age=52;
-    constructor(n:string){
-        this.name=n;
+    constructor(n?:string){
+        if(n){
+            this.name=n;
+        }
+        
     }
     greet(phrases: string): void {
         console.log(phrases+' '+this.name);
