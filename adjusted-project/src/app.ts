@@ -1,6 +1,6 @@
 class Department{
     // name: string; //field of the class NOT an object
-  private employees: string[]=[];// means only accesible inside the particular class
+  protected employees: string[]=[];// means only accesible inside the particular class
   //in no modifier specified it's public by default
     constructor(public name:string, private readonly id:number ){
 // this.name=n;
@@ -8,6 +8,9 @@ class Department{
     describe(this: Department){
         console.log('Department' + this.name)
         //the this keyword points to the variables that belong to this class
+    }
+    addEmployee(name:string){
+        this.employees.push(name);
     }
 }
 const accounting= new Department('Accounting',2);//the object is initialized
@@ -27,6 +30,13 @@ const accoundingCopy={name:'s',describe: accounting.describe};
 class ITDepartment extends Department{
     constructor(id:string, public admins:string[]){
         super(id,5);//the constuctor of the Base class is invoked here
+    }
+    addEmployee(name: string): void {
+        if(name==='Max'){
+            return;
+        }
+        this.employees.push(name);
+        //the function from Base class is overriden
     }
 }
 const IT=new ITDepartment('d1',['Tom']);
