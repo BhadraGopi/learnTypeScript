@@ -67,3 +67,19 @@ const addedNumbers= added(2,5,4,7,9);
 console.log(addedNumbers);
 //All the input values will be merged into an array
 //A tuple can also be used to set the number and type of input values
+
+//Array and Object DESTRUCTURING(pulling elements out of em)
+//instead of doing
+// const hobby1=hobbies[0];
+// const hobby2=hobbies[1];
+//we can write
+const[hobby1,hobby2]=hobbies;//This pulls out elements out in order and puts them in the array in the same order.
+//or if array had more elements
+// const[hobby1,hobby2,...remainingHobbies]=hobbies;
+//the new array called remaining hobbies will contain the rest of the values.
+//in case of objects
+const{name:fullname,age}=Man;
+//the elemets are not pulled out inorder but by key-value pair
+//fullname is NOT a type assertment but overriding the keyword
+console.log(name,age);//doesn't show name
+console.log(fullname,age);//does show the name.
