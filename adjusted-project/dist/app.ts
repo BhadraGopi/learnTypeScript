@@ -74,3 +74,25 @@ console.log(numberStorgae.getItems());
 //But ofcourse better to avoid such errors we can ensure that this generic only work with primitive types
 //By giving T extends primitive types
 //Also the class can have more than one genric types and functioons with their own genric type
+
+
+//GENERIC  UTILITY TYPES
+interface CourseGoal{
+    title: string;
+    description: string;
+    completeUntil:Date;
+}
+function createCourseGoal(title: string,
+    desciption: string,
+    date:Date
+    ):CourseGoal{
+        let CourseGoal: Partial< CourseGoal>={};
+        CourseGoal.title=title;
+        CourseGoal.description=desciption;
+        CourseGoal.completeUntil=date;
+        return CourseGoal as CourseGoal;
+        //because need to convert from partial to CourseGoal using type casting
+    }
+    const nameList: Readonly<string[]>=['Max','Jack'];
+    //nameList.push('Manu');
+    //another ex
