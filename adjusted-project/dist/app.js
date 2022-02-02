@@ -58,13 +58,15 @@ numberStorgae.addTtem(56);
 numberStorgae.addTtem(90);
 //numberStorgae.removeItem(90);
 console.log(numberStorgae.getItems());
-// const objectStorgae= new DataStorage<object>();
-// const maxObj={name:'Max'};//inorder to fix the problem of reference type we store it explicitly in memory like this
-// objectStorgae.addTtem({name:'Manu'});
-// objectStorgae.addTtem(maxObj);
-// objectStorgae.removeItem(maxObj);
-// console.log(numberStorgae.getItems());
-//But ofcourse better to avoid such errors we can ensure that this generic only work with primitive types
-//By giving T extends primitive types
-//Also the class can have more than one genric types and functioons with their own genric type
+function createCourseGoal(title, desciption, date) {
+    let CourseGoal = {};
+    CourseGoal.title = title;
+    CourseGoal.description = desciption;
+    CourseGoal.completeUntil = date;
+    return CourseGoal;
+    //because need to convert from partial to CourseGoal using type casting
+}
+const nameList = ['Max', 'Jack'];
+//nameList.push('Manu');
+//another ex
 //# sourceMappingURL=app.js.map
